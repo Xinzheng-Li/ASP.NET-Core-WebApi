@@ -1,10 +1,8 @@
 ﻿using WebApi.Model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace WebApi.Data
+namespace WebApi.Repository
 {
     public class UserRepository
     {

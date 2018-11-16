@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace WebApi.Data
+namespace WebApi.Repository
 {
     interface IDBRepository<T> where T : class
     {

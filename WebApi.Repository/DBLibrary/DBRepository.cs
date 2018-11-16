@@ -1,11 +1,7 @@
 ﻿using Dapper.Contrib.Extensions;
-using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq.Expressions;
-using System.Text;
 
-namespace WebApi.Data
+namespace WebApi.Repository
 {
     public class DBRepository<T> : IDBRepository<T> where T : class
     {
