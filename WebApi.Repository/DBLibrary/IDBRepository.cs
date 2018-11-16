@@ -11,9 +11,9 @@ namespace WebApi.Data
 
         T Get(object id);
 
-        T Update(T t);
+        bool Update(T t);
 
-        T Insert(T apply);
+        long Insert(T apply);
 
         bool Delete(T t);
     }

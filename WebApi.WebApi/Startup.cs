@@ -25,7 +25,8 @@ namespace WebApi.WebApi
         {
             //Set SQLTYPE and DBConnection
             ConnectionFactory.SQLTYPE = Configuration.GetConnectionString("SQLTYPE");
-            ConnectionFactory.CONN_STRING = Configuration.GetConnectionString("DBConnection");
+            ConnectionFactory.CONN_STRING_MSSQL = Configuration.GetConnectionString("MSSQLConnection");
+            ConnectionFactory.CONN_STRING_MYSQL = Configuration.GetConnectionString("MYSQLConnection");
 
             services.AddSwaggerGen(service =>
             {

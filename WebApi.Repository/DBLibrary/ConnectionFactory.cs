@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using MySql.Data.MySqlClient;
 
 namespace WebApi.Data
 {
     public static class ConnectionFactory
     {
-        public static string CONN_STRING = "";
+        public static string CONN_STRING_MSSQL = "";//Default Sql_String
+        public static string CONN_STRING_MYSQL = "";
         /// <summary>
         /// global variate, default database
         /// </summary>
         public static string SQLTYPE = "MSSQL";
-        public static IDbConnection CreateConnection<T>() where T : IDbConnection, new()
+        public static IDbConnection CreateConnection<T>(string conStr = null) where T : IDbConnection, new()
         {
+            if (conStr is null) conStr = CONN_STRING_MSSQL;
             IDbConnection connection = new T();
-            connection.ConnectionString = CONN_STRING;
+            connection.ConnectionString = CONN_STRING_MSSQL;
             connection.Open();
             return connection;
         }
@@ -31,7 +34,9 @@ namespace WebApi.Data
             switch (sqltype)
             {
                 case "MSSQL":
-                    return CreateConnection<SqlConnection>();
+                    return CreateConnection<SqlConnection>(CONN_STRING_MSSQL);
+                case "MYSQL":
+                    return CreateConnection<MySqlConnection>(CONN_STRING_MYSQL);
                 default:
                     throw new Exception("Unsupported database type");
             }

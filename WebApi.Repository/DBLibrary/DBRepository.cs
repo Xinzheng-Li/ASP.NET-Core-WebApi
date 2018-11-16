@@ -16,7 +16,7 @@ namespace WebApi.Data
         /// <returns></returns>
         public virtual T Get(object id)
         {
-            using (var con = ConnectionFactory.CreateSqlConnection())
+            using (var con = ConnectionFactory.CreateSqlConnection("MSSQL"))
             {
                 return con.Get<T>(id);
             }
@@ -27,7 +27,7 @@ namespace WebApi.Data
         /// <returns></returns>
         public virtual IEnumerable<T> GetList()
         {
-            using (var conn = ConnectionFactory.CreateSqlConnection())
+            using (var conn = ConnectionFactory.CreateSqlConnection("MSSQL"))
             {
                 return conn.GetAll<T>();
             }
@@ -37,24 +37,22 @@ namespace WebApi.Data
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public virtual T Insert(T model)
+        public virtual long Insert(T model)
         {
             using (var conn = ConnectionFactory.CreateSqlConnection())
             {
-                conn.Insert(model);
-                return model;
+                return conn.Insert(model);
             }
         }
         /// <summary>
         /// Updates entity in table "Ts", checks if the entity is modified if the entity is tracked by the Get() extension.</summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public virtual T Update(T model)
+        public virtual bool Update(T model)
         {
             using (var conn = ConnectionFactory.CreateSqlConnection())
             {
-                conn.Update(model);
-                return model;
+                return conn.Update(model);
             }
         }
         /// <summary>

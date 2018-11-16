@@ -4,5 +4,39 @@
         <name>WebApi.WebApi</name>
     </assembly>
     <members>
+        <member name="M:WebApi.WebApi.Controllers.UserController.GetUserList">
+            <summary>
+            Get User list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.WebApi.Controllers.UserController.GetUser(System.Int32)">
+            <summary>
+            Get User by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.WebApi.Controllers.UserController.UserInsert(WebApi.Model.User)">
+            <summary>
+            Create a new User and return the user information
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.WebApi.Controllers.UserController.UserUpdate(WebApi.Model.User)">
+            <summary>
+            Update a user
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.WebApi.Controllers.UserController.UserDelete(WebApi.Model.User)">
+            <summary>
+            Delete a user
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

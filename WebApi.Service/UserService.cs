@@ -13,5 +13,21 @@ namespace WebApi.Service
         {
             return new UserRepository().GetUserList();
         }
+        public User GetUser(int id)
+        {
+            return new UserRepository().GetUser(id);
+        }
+        public bool UserInsert(User model)
+        {
+            return new UserRepository().UserInsert(model) > 0;
+        }
+        public bool UserUpdate(User model)
+        {
+            return new UserRepository().UserUpdate(model);
+        }
+        public bool UserDelete(User model)
+        {
+            return new UserRepository().UserDelete(model);
+        }
     }
 }

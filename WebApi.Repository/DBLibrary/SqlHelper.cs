@@ -16,7 +16,6 @@ namespace WebApi.Data
             {
                 intResult = db.Execute(sql, param, null, commandTimeOut, commandType);
             }
-
             return intResult > 0;
         }
 
