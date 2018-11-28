@@ -15,7 +15,7 @@ namespace WebApi.WebApi.Controllers
         /// Get User list
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("GetUserList")]
         [ApiExplorerSettings(GroupName = "ManagementV1")]//It needs to be consistent with the document name
         public List<User> GetUserList()
         {
@@ -26,7 +26,7 @@ namespace WebApi.WebApi.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{id}")]
+        [HttpGet("GetUser")]
         [ApiExplorerSettings(GroupName = "ManagementV1")]
         public User GetUser(int id)
         {
@@ -37,7 +37,7 @@ namespace WebApi.WebApi.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [HttpPost("model")]
+        [HttpPost("UserInsert")]
         [ApiExplorerSettings(GroupName = "ManagementV1")]
         public bool UserInsert(User model)
         {
@@ -48,7 +48,7 @@ namespace WebApi.WebApi.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [HttpPut("model")]
+        [HttpPut("UserUpdate")]
         [ApiExplorerSettings(GroupName = "ManagementV1")]
         public bool UserUpdate(User model)
         {
@@ -59,7 +59,7 @@ namespace WebApi.WebApi.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [HttpDelete("model")]
+        [HttpDelete("UserDelete")]
         [ApiExplorerSettings(GroupName = "ManagementV1")]
         public bool UserDelete(User model)
         {
