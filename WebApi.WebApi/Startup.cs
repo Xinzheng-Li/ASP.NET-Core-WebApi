@@ -8,6 +8,8 @@ using WebApi.Repository;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.IO;
+using NLog.Extensions.Logging;
+using NLog.Web;
 
 namespace WebApi.WebApi
 {
@@ -43,7 +45,8 @@ namespace WebApi.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env,ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole();
+            loggerFactory.AddNLog();
+            env.ConfigureNLog("nlog.config");
 
             if (env.IsDevelopment())
             {
